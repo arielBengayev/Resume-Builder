@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title th:text="'CV ' + ${fullName} "></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Verdana, sans-serif;
+            line-height: 1.6;
+            color: #000;
+            width: 210mm;
+            height: 267mm;
+            margin: 0 auto;
+            display: flex;
+            font-size: 8.5pt;
+            position: relative;
+        }
+        .left-column {
+            width: 60mm;
+            height: 267mm;
+            background-color: #f0f0f0;
+            padding: 5mm;
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+        }
+        .right-column {
+            width: 120mm;
+            height: 267mm;
+            margin-left: 65mm;
+            background-color: #ffffff;
+            padding-top: 10mm;
+            position: relative;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+        }
+        .header {
+            text-align: center;
+            border: 1.5px solid #000;
+            padding: 5mm;
+            margin-bottom: 5mm;
+            position: absolute;
+            top: 5mm;
+            left: -30mm;
+            width: 120mm;
+            background-color: white;
+            z-index: 10;
+        }
+        .name {
+            font-size: 16pt;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        .job-title {
+            font-size: 10pt;
+            margin-top: 2mm;
+        }
+        .contact-details {
+            margin-top: 35mm;
+            display: flex;
+            flex-direction: column;
+            gap: 3mm;
+        }
+        .contact-section {
+            font-size: 8pt;
+        }
+        .section-title {
+            font-size: 10pt;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 1px solid #000;
+            margin-top: 5mm;
+            margin-bottom: 3mm;
+            padding-bottom: 1mm;
+        }
+        .profile, .project-description {
+            text-align: justify;
+            margin-bottom: 3mm;
+        }
+        .projects .project {
+            margin-bottom: 3mm;
+        }
+        .project-title {
+            font-weight: 600;
+        }
+        .skills-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .skills-list span {
+            display: block;
+            padding-top: 6px;
+            font-size: 9pt;
+            font-weight: 400;
+        }
+        .education-description {
+            margin-bottom: 3mm;
+        }
+        .education-details {
+            display: flex;
+            justify-content: space-between;
+        }
+        .education-institution{
+            font-weight: 600;
+        }
+        .detail{
+            margin-bottom: 2mm;
+        }
+        .language-list {
+            display: flex;
+            gap: 3mm;
+        }
+        a {
+            color: black;
+        }
+    </style>
+</head>
+<body>
+<div class="left-column">
+    <div class="contact-details">
+        <div class="section-title">CONTACT</div>
+        <div class="contact-section">
+            <strong>PHONE</strong>
+            <p class="detail" th:text="${phone}">+972527099594</p>
+        </div>
+        <div class="contact-section">
+            <strong>EMAIL</strong>
+            <p class="detail">
+                <a th:href="'mailto:' + ${email}" th:text="${email}">hello@reallygreatsite.com</a>
+            </p>
+        </div>
+        <div class="contact-section">
+            <strong>LINKEDIN</strong>
+            <p>
+                <a th:href="${linkedin}" th:text="${linkedin}">www.reallygreatsite.com</a>
+            </p>
+        </div>
+    </div>
+    <div class="section-title">SKILLS</div>
+    <div class="skills-list">
+        <span th:each="skill : ${skills}" th:text="${skill}">JavaScript</span>
+    </div>
+</div>
+
+<div class="right-column">
+    <div class="header">
+        <div class="name" th:text="${fullName}">MATAN LEVI</div>
+        <div class="job-title" th:text="${profession}">FULL STACK WEB DEVELOPER</div>
+    </div>
+
+    <div style="margin-top: 30mm;"></div>
+
+    <div class="section-title">SUMMARY</div>
+    <div class="profile" th:text="${summary}">
+        I am a 24yo Full stack web developer with ability to learn and collaborate in rapidly changing environments and compositions. Experienced in JavaScript, Java, React, Angular, Vue, Node.Js, Express, MySQL, SQL, MongoDB, Spring Boot. Self-learner and a team-player.
+    </div>
+
+    <div class="section-title">EXPERIENCE</div>
+    <div class="projects">
+        <div class="project" th:each="job : ${experience}">
+            <div class="project-title" th:text="${job.title}">Kick's</div>
+            <span th:text="${job.company}">Default Company</span>
+            <span th:text="${job.duration}">2014 - 2016</span>
+            <div class="project-description" th:text="${job.description}">An e-commerce Full Stack web application that enable users to shop and buy shoes.</div>
+        </div>
+    </div>
+
+    <div class="section-title">EDUCATION</div>
+    <div class="education" th:each="edu : ${education}">
+        <div class="education-details">
+            <span th:text="${edu.institution}" class="education-institution">Backend bootcamp - Condingbc</span><br/>
+            <span th:text="${edu.year}">Jan 2023 - Jan 2023</span>
+        </div>
+        <div class="education-description" th:text="${edu.degree}">Hands-on experience and best practices with modern backend programming.</div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title th:text="'CV ' + ${fullName} "></title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .container {
+            width: 19cm;
+            margin: 0 auto;
+            background: #fff;
+        }
+        .header {
+            background-color: #f9fcff;
+            text-align: center;
+            padding: 10pt;
+            border-bottom: 1pt solid #dce3e7;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 24pt;
+            color: #333;
+        }
+        .header h3 {
+            margin: 5pt 0 0;
+            color: #555;
+            font-weight: normal;
+        }
+        .content {
+            width: 100%;
+        }
+        .left-column {
+            float: left;
+            width: 30%;
+            height: 850px;
+            padding: 10pt;
+            background-color: #f9fcff;
+            border-right: 1pt solid #dce3e7;
+            box-sizing: border-box;
+        }
+        .right-column {
+            float: left;
+            width: 70%;
+            padding: 10pt;
+            box-sizing: border-box;
+        }
+        .section-title {
+            font-size: 12pt;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 5pt;
+            border-bottom: 1pt solid #dce3e7;
+            padding-bottom: 3pt;
+        }
+        .section-content {
+            margin-bottom: 10pt;
+        }
+        .contact div, .skills ul, .languages ul {
+            margin: 3pt 0;
+        }
+        .skills ul, .languages ul {
+            list-style: none;
+            padding: 0;
+        }
+        .skills li, .languages li {
+            margin-bottom: 3pt;
+        }
+        .experience h4 {
+            margin: 0;
+            font-size: 12pt;
+            color: #333;
+        }
+        .experience span {
+            margin: 3pt 0;
+            color: #555;
+            font-size: 10pt;
+        }
+        .description {
+            list-style: disc;
+            margin: 5pt 0 0 0;
+            font-size: 10pt;
+        }
+        .education-item {
+            margin-bottom: 10pt;
+        }
+        .education-item h4 {
+            margin: 0;
+            font-size: 12pt;
+            color: #333;
+        }
+        .education-item span {
+            margin: 3pt 0;
+            color: #555;
+            font-size: 10pt;
+        }
+        .contact-font {
+           font-size: 10pt;
+           padding-bottom: 3pt;
+        }
+        .font{
+           font-size: 10pt;
+        }
+        a {
+            color: black;
+        }
+        .clearfix::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1 th:text="${fullName}">RICHARD SANCHEZ</h1>
+        <h3 th:text="${profession}">Marketing Manager</h3>
+    </div>
+    <div class="content">
+        <div class="left-column">
+            <div class="section-content contact">
+                <h2 class="section-title">Contact</h2>
+                <div class="contact-font">
+                    <a th:href="'mailto:' + ${email}" th:text="${email}">hello@reallygreatsite.com</a>
+                </div>
+                <div class="contact-font" th:text="${phone}">+123-456-7890</div>
+                <div class="contact-font">
+                    <a th:href="${linkedin}">linkedin</a>
+                </div>
+            </div>
+            <div class="section-content skills">
+                <h2 class="section-title">Skills</h2>
+                <ul>
+                    <li class="contact-font" th:each="skill : ${skills}">
+                        ✔ <span th:text="${skill}"></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="right-column">
+            <div class="section-content">
+                <h2 class="section-title">Summary</h2>
+                <p class="font" th:text="${summary}">
+                    Experienced and results-driven Marketing Manager with a proven track record
+                    in developing and executing successful marketing strategies. Adept in strategic
+                    planning, team leadership, and creative problem-solving to achieve business objectives.
+                </p>
+            </div>
+            <div class="section-content">
+                <h2 class="section-title">Experience</h2>
+                <div class="experience" th:each="job : ${experience}">
+                    <h4 th:text="${job.title}">Marketing Manager & Specialist</h4>
+                    <span th:text="${job.company}">Borcelle Studio</span>
+                    <span> | </span>
+                    <span th:text="${job.duration}">2030 - PRESENT</span>
+                    <div class="description" th:text="${job.description}">
+                        An e-commerce Full Stack web application that enable users to shop and buy shoes.
+                    </div><br/>
+                </div>
+            </div>
+            <div class="section-content">
+                <h2 class="section-title">Education</h2>
+                <div class="education-item" th:each="edu : ${education}">
+                    <h4 th:text="${edu.institution}">Borcelle University</h4>
+                    <span th:text="${edu.year}">Jan 2023 - Jan 2023</span>
+                    <div class="description" th:text="${edu.degree}">
+                        Hands-on experience and best practices with modern backend programming.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
