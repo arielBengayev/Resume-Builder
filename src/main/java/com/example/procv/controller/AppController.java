@@ -26,7 +26,7 @@ public class AppController {
     @Autowired
     private HtmlToPdf htmlToPdf;
 
-    @PostMapping("/chat")
+    @PostMapping("/generateResume")
     public ResponseEntity<byte[]> generateResume(@RequestBody ChatRequestDTO requestDTO) throws IOException {
         String prompt = requestDTO.getPrompt();
         String style = requestDTO.getStyle();

@@ -34,7 +34,7 @@
             justify-content: flex-end;
         }
         .chat-bubble {
-            max-width: 60%;
+            max-width: 50%;
             padding: 15px 20px;
             border-radius: 20px;
             font-size: 15px;
@@ -111,11 +111,11 @@
     </style>
 </head>
 <body>
-    <div class="chat-container" id="chatContainer"></div>
-    <div class="input-container">
-        <textarea id="prompt" placeholder="Your answer..."></textarea>
-        <button onclick="sendAnswer()">Send</button>
-    </div>
+<div class="chat-container" id="chatContainer"></div>
+<div class="input-container">
+    <textarea id="prompt" placeholder="Your answer..."></textarea>
+    <button id="sendButton" onclick="sendAnswer()" disabled>Send</button>
+</div>
 <script>
     const questions = [
         "What is your full name and profession? (Please provide the profession in detail)",
@@ -123,12 +123,14 @@
         "Please provide detailed work experience/projects, including company names, job titles, employment periods (years), and key responsibilities or projects you have worked on.",
         "What are your key skills? Please provide a detailed list of your technical skills.",
         "Please describe your educational background. Include the institution names, years attended, and degrees or certifications obtained.",
-        "Feel free to add any additional information that might be relevant to your resume or click send.",
+        "Feel free to add any additional information that might be relevant or send continue.",
     ];
 
     let currentQuestionIndex = 0;
     const answers = [];
     const chatContainer = document.getElementById("chatContainer");
+    const sendButton = document.getElementById("sendButton");
+    const promptInput = document.getElementById("prompt");
 
     function displayQuestion() {
         if (currentQuestionIndex < questions.length) {
@@ -142,7 +144,7 @@
     }
 
     async function sendAnswer() {
-        const prompt = document.getElementById("prompt").value;
+        const prompt = promptInput.value;
 
         const userMessage = document.createElement("div");
         userMessage.className = "chat-message user";
@@ -151,7 +153,8 @@
 
         answers.push(prompt);
 
-        document.getElementById("prompt").value = "";
+        promptInput.value = "";
+        sendButton.disabled = true;
         chatContainer.scrollTop = chatContainer.scrollHeight;
 
         currentQuestionIndex++;
@@ -214,7 +217,7 @@
                             The resume should reflect the individual's experience, expertise, and accomplishments.
                             Please ensure that the full name and profession are written in uppercase, and that the year of education is included.`;
 
-        fetch("/api/bot/chat", {
+        fetch("/api/bot/generateResume", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -248,6 +251,11 @@
             chatContainer.appendChild(errorMessage);
         });
     }
+
+    promptInput.addEventListener("input", () => {
+        sendButton.disabled = promptInput.value.trim() === "";
+    });
+
     displayQuestion();
 </script>
 </body>
