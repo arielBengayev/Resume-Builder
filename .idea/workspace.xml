@@ -4,33 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ebf9d5c7-7ea6-4fc4-90d6-65ec6a8cc1dc" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/procv/ProcvApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/procv/config/OpenAIConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/procv/config/SwaggerConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/procv/controller/AppController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/procv/dto/ChatRequestDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/procv/model/Resume.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/procv/openAI/ChatGPTRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/procv/openAI/ChatGPTResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/procv/openAI/Message.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/procv/service/DataMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/procv/service/HtmlToPdf.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/chat.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/favicon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/resume.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/resume2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/resume.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/resume2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/procv/ProcvApplicationTests.java" afterDir="false" />
+    <list default="true" id="ebf9d5c7-7ea6-4fc4-90d6-65ec6a8cc1dc" name="Changes" comment="-">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,8 +46,8 @@
       <recent name="C:\projects\proCV\src\main\resources\static" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\projects\proCV\src\main\resources\static" />
       <recent name="C:\projects\proCV\src\main\resources\templates" />
+      <recent name="C:\projects\proCV\src\main\resources\static" />
     </key>
   </component>
   <component name="RunManager">
@@ -103,6 +79,42 @@
       <option name="presentableId" value="Default" />
       <updated>1731923068598</updated>
     </task>
+    <task id="LOCAL‎-00001" summary="-">
+      <created>1735204420024</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL‎-00001" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1735204420024</updated>
+    </task>
+    <task id="LOCAL‎-00002" summary="-">
+      <created>1736773558904</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL‎-00002" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1736773558904</updated>
+    </task>
+    <task id="LOCAL‎-00003" summary="-">
+      <created>1736928495489</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL‎-00003" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1736928495489</updated>
+    </task>
+    <task id="LOCAL‎-00004" summary="-">
+      <created>1737273754747</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL‎-00004" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1737273754747</updated>
+    </task>
+    <task id="LOCAL‎-00005" summary="-">
+      <created>1737273990247</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL‎-00005" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1737273990247</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -115,6 +127,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="-" />
+    <option name="LAST_COMMIT_MESSAGE" value="-" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
