@@ -8,6 +8,11 @@ public class ViewController {
 
     @GetMapping("/")
     public String home(){
+        return "home";
+    }
+
+    @GetMapping("/chat")
+    public String chat(){
         return "chat";
     }
 

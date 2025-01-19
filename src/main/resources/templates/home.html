@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+    <title>ProCv</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #121212;
+            color: #e0e0e0;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+            margin-top: 0;
+            color: #0288d1;
+            text-align: center;
+        }
+            .info-card {
+            background-color: #1e1e1e;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            max-width: 800px;
+            margin: 1rem auto;
+            margin-bottom: 30px;
+        }
+            .info-card p {
+            font-size: 1.5rem;
+            color: #b0bec5;
+            line-height: 1.8;
+        }
+            .login-with-google-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px 25px;
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #fff;
+            background-color: #0288d1;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+            .login-with-google-btn:hover {
+            background-color: #357ae8;
+            transform: translateY(-2px);
+        }
+            .login-with-google-btn img {
+            width: 24px;
+            height: 24px;
+            margin-right: 12px;
+        }
+        header, footer {
+            text-align: center;
+            margin: 0 auto;
+        }
+        </style>
+</head>
+<body>
+<header>
+    <h1>Welcome to ProCv</h1>
+</header>
+<main>
+    <div class="info-card">
+        <p>
+            Easily create professional resumes with the power of AI. Whether you're starting your career
+            or looking for a new opportunity, our platform helps you stand out.
+        </p>
+        <p>
+            Our system guides you step-by-step through a chat interface, asking focused questions to gather
+            your career details. Once complete, you can choose from a variety of professional designs,
+            and the system will generate a PDF tailored to your answers using AI. It's never been easier
+            to build your dream resume!
+        </p>
+    </div>
+</main>
+<footer>
+    <form action="/oauth2/authorization/google" method="GET">
+        <button type="submit" class="login-with-google-btn">
+            <img src="https://www.gstatic.com/images/branding/product/1x/gsa_512dp.png" alt="Google Logo">
+            Sign in with Google
+        </button>
+    </form>
+</footer>
+</body>
+</html>

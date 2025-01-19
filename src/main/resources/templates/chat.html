@@ -217,10 +217,21 @@
                             The resume should reflect the individual's experience, expertise, and accomplishments.
                             Please ensure that the full name and profession are written in uppercase, and that the year of education is included.`;
 
+        function getCookie(name) {
+                const value = `; ${document.cookie}`;
+                const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) {
+                return parts.pop().split(';').shift();
+            }
+        }
+
+        const csrfToken = getCookie("JSESSIONID");
+
         fetch("/api/bot/generateResume", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
+                "Authorization": `Bearer ${csrfToken}`,
             },
             body: JSON.stringify({ style: selectedTemplate, prompt: promptData }),
         })
