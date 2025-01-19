@@ -159,7 +159,9 @@
 
         currentQuestionIndex++;
         if (currentQuestionIndex < questions.length) {
-            displayQuestion();
+            setTimeout(() => {
+                displayQuestion();
+            }, 1500);
         } else {
             finalizeResume();
         }
