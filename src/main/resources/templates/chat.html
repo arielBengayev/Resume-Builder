@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="/favicon.png" type="image/x-icon">
-    <title>ProCv</title>
+    <title>ProCV</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -15,6 +15,7 @@
             height: 100vh;
             background-color: #000;
             color: #fff;
+            box-sizing: border-box;
         }
         .chat-container {
             flex: 1;
@@ -58,7 +59,6 @@
         .input-container {
             display: flex;
             padding: 20px;
-
         }
         .input-container textarea {
             flex: 1;
@@ -77,8 +77,11 @@
             outline: none;
         }
         .input-container button {
-            padding: 0 15px 0 15px;
-            font-size: 15px;
+            padding-left: 25px;
+            padding-right: 25px;
+            padding-top: 0;
+            padding-bottom: 0;
+            font-size: 12px;
             border: none;
             background: linear-gradient(145deg, #0078d4, #005fa3);
             color: white;
@@ -107,6 +110,64 @@
         }
         .image-options img:hover {
             transform: scale(2.3);
+        }
+        @media screen and (max-width: 768px) {
+            .chat-container {
+                padding: 10px;
+                font-size: 14px;
+                margin-bottom: 70px;
+            }
+            .chat-bubble {
+                font-size: 13px;
+                padding: 10px 15px;
+            }
+            .chat-bubble.user {
+                max-width: 70%;
+            }
+            .chat-bubble.bot {
+                max-width: 80%;
+            }
+            .input-container {
+                padding: 10px;
+            }
+            .input-container textarea {
+                font-size: 14px;
+                padding: 10px;
+            }
+            .input-container button {
+                font-size: 14px;
+                padding: 0 10px;
+            }
+            .image-options img {
+                width: 80px;
+                height: 100px;
+            }
+            .image-options {
+                padding: 20px;
+            }
+        }
+        @media screen and (max-width: 480px) {
+            .chat-bubble {
+                font-size: 12px;
+            }
+            .chat-container {
+                padding: 5px;
+            }
+            .input-container textarea {
+                font-size: 12px;
+                padding: 8px;
+            }
+            .input-container button {
+                font-size: 12px;
+                padding: 0 8px;
+            }
+            .image-options img {
+                width: 60px;
+                height: 80px;
+            }
+            .image-options {
+                padding: 10px;
+            }
         }
     </style>
 </head>
@@ -161,7 +222,7 @@
         if (currentQuestionIndex < questions.length) {
             setTimeout(() => {
                 displayQuestion();
-            }, 1500);
+            }, 1000);
         } else {
             finalizeResume();
         }
@@ -219,21 +280,10 @@
                             The resume should reflect the individual's experience, expertise, and accomplishments.
                             Please ensure that the full name and profession are written in uppercase, and that the year of education is included.`;
 
-        function getCookie(name) {
-                const value = `; ${document.cookie}`;
-                const parts = value.split(`; ${name}=`);
-            if (parts.length === 2) {
-                return parts.pop().split(';').shift();
-            }
-        }
-
-        const csrfToken = getCookie("JSESSIONID");
-
         fetch("/api/bot/generateResume", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": `Bearer ${csrfToken}`,
             },
             body: JSON.stringify({ style: selectedTemplate, prompt: promptData }),
         })
