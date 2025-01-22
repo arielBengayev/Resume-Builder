@@ -132,11 +132,18 @@
     </div>
 </main>
 <footer>
-    <form>
-        <button type="button" class="login-with-google-btn" onclick="redirectToChat()">
-            START
+    <form action="/oauth2/authorization/google" method="GET">
+        <button type="submit" class="login-with-google-btn">
+            <img src="https://www.gstatic.com/images/branding/product/1x/gsa_512dp.png" alt="Google Logo">
+            Sign in with Google
         </button>
     </form>
 </footer>
 </body>
 </html>
+
+<!--<form>-->
+<!--    <button type="button" class="login-with-google-btn" onclick="redirectToChat()">-->
+<!--        START-->
+<!--    </button>-->
+<!--</form>-->
