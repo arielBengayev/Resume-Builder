@@ -1,9 +1,0 @@
-{
-  "version": 2,
-  "builds": [
-    { "src": "target/*.jar", "use": "@vercel/static" }
-  ],
-  "routes": [
-    { "src": "/(.*)", "dest": "target/procv-0.0.1-SNAPSHOT.jar" }
-  ]
-}
