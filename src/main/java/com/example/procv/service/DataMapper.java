@@ -1,6 +1,6 @@
 package com.example.procv.service;
 
-import com.example.procv.model.Resume;
+import com.example.procv.dto.Resume;
 import org.springframework.stereotype.Service;
 import org.thymeleaf.context.Context;
 

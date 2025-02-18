@@ -1,7 +1,6 @@
-package com.example.procv.model;
+package com.example.procv.dto;
 
 import lombok.Getter;
-
 import java.util.List;
 
 @Getter
