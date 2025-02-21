@@ -1,9 +1,15 @@
 package com.example.procv.dto;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
+
 import java.util.List;
 
-@Getter
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Resume {
     private String fullName;
     private String profession;
@@ -15,7 +21,9 @@ public class Resume {
     private List<Education> education;
     private List<String> skills;
 
-    @Getter
+    @Data
+    @AllArgsConstructor
+    @NoArgsConstructor
     public static class Experience {
         private String title;
         private String company;
@@ -23,7 +31,9 @@ public class Resume {
         private String description;
     }
 
-    @Getter
+    @Data
+    @AllArgsConstructor
+    @NoArgsConstructor
     public static class Education {
         private String institution;
         private String year;

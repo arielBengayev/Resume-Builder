@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 import org.thymeleaf.context.Context;
 
 @Service
-public class DataMapper {
+public class DataMapperService {
     public Context setDate(Resume resume) {
         Context context = new Context();
         context.setVariable("fullName", resume.getFullName());
